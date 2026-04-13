@@ -22,7 +22,7 @@ Chaque guide est structuré de la même façon : contexte, prérequis, installat
 | [`zabbix/`](./zabbix/) | Supervision Zabbix 7.4 — pile LNPP + TimescaleDB | Debian Trixie 13 | ✅ Disponible |
 | [`fogproject/`](./fogproject/) | Déploiement PXE FOGProject — capture et masterisation | Debian Trixie 13 | ✅ Disponible |
 | [`glpi/`](./glpi/) | Helpdesk GLPI 11.0.2 + authentification AD | Debian Trixie 13 | 🔄 En cours |
-| [`debian-base/`](./debian-base/) | Configuration de base Debian — SSH, sudo, sécurisation | Debian Trixie 13 | 🔄 En cours |
+| [`debian-base/`](./debian-base/) | Configuration de base Debian — SSH, sudo, sécurisation | Debian Trixie 13 | ✅ Disponible |
 | [`powerdns/`](./powerdns/) | Serveur DNS PowerDNS | Debian Trixie 13 | ⏳ À venir |
 | [`kea-dhcp/`](./kea-dhcp/) | Serveur DHCP Kea | Debian Trixie 13 | ⏳ À venir |
 | [`openvpn/`](./openvpn/) | Serveur OpenVPN + SSH sécurisé | Debian Trixie 13 | ⏳ À venir |
