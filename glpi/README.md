@@ -10,7 +10,6 @@ Configuration conforme FHS et sécurisation des sessions.
 | Fichier | Description |
 |---|---|
 | [`INSTALL.md`](./INSTALL.md) | Procédure complète pas-à-pas avec captures |
-| [`config/glpi.conf`](./config/glpi.conf) | VirtualHost Apache pour GLPI |
 | [`screenshots/`](./screenshots/) | Captures de validation |
 
 ---
