@@ -35,7 +35,7 @@ Chaque guide est structuré de la même façon : contexte, prérequis, installat
 ```
 install-guides/<service>/
 ├── README.md        ← procédure complète pas-à-pas
-├── config/          ← fichiers de configuration
+├── INSTALL.md       ← fichiers de configuration
 └── screenshots/     ← captures de validation
 ```
 
