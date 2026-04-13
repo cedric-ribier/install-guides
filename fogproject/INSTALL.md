@@ -1,5 +1,7 @@
 # FOGProject — Procédure d'installation
 
+![FOGProject Schéma Réseau](./screenshots/01-FogProject-schema.png) 
+
 ---
 
 ## A. Déploiement de pfSense
