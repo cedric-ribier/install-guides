@@ -10,7 +10,6 @@ Testé dans un environnement GNS3 virtualisé — lab TSSR CreativeFusion Studio
 | Fichier | Description |
 |---|---|
 | [`INSTALL.md`](./INSTALL.md) | Procédure complète pas-à-pas avec captures |
-| [`config/`](./config/) | Fichiers de configuration |
 | [`screenshots/`](./screenshots/) | Captures de validation |
 
 ---
