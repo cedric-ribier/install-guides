@@ -197,6 +197,8 @@ systemctl status zabbix-agent
 
 ![Services actifs](./screenshots/02-services-status.png)
 
+![Services actifs](./screenshots/03-services-status.png)
+
 ---
 
 ## K. Accès au dashboard
@@ -210,7 +212,9 @@ Suivre l'assistant web :
 - Fuseau horaire : `Europe/Paris`
 - Changer le mot de passe admin par défaut
 
-![Dashboard Zabbix](./screenshots/03-dashboard.png)
+![Dashboard Zabbix](./screenshots/04-dashboard.png)
+
+![Dashboard Zabbix](./screenshots/05-dashboard.png)
 
 ---
 
@@ -237,7 +241,7 @@ systemctl enable --now zabbix-agent
 
 ## M. Résultat — hôtes supervisés
 
-![Liste des hôtes](./screenshots/04-hosts.png)
+![Liste des hôtes](./screenshots/06-hosts.png)
 
 ---
 
