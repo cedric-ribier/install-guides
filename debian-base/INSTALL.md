@@ -176,7 +176,7 @@ tldr --version
 |---|---|
 | OpenSSH | `enabled` · `running` |
 | sudo | Utilisateur dans le groupe `sudo` |
-| tldr | Version affichée · `tldr ls` fonctionnel |
+| tldr | Version affichée · `tldr tar` fonctionnel |
 
 ---
 
