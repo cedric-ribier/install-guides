@@ -13,7 +13,7 @@
 3. Activer le serveur DHCP sur le LAN interne
 4. Vérifier les attributions IP et les options PXE — FOG gère le PXE via `ipxe.pxe`
 
-![pfSense DHCP actif](./screenshots/01-pfsense-dhcp.png)
+![pfSense DHCP actif](./screenshots/02-pfsense-dhcp.png)
 
 ---
 
