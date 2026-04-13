@@ -43,7 +43,7 @@ Choix lors de l'installation :
 - Interface réseau : sélectionner la bonne interface (ex. `ens33`)
 - Questions DHCP : répondre **NON** à chaque question — pfSense gère le DHCP
 
-![Installation FOG](./screenshots/02-fog-install.png)
+![Installation FOG](./screenshots/03-fog-install.png)
 
 ---
 
@@ -56,8 +56,6 @@ http://<IP_FOG>/fog/management
 ```
 
 Valider la création automatique de la base de données via l'assistant web.
-
-![Déploiement base de données](./screenshots/03-fog-db-deploy.png)
 
 ---
 
