@@ -86,8 +86,8 @@ nano /etc/apache2/sites-available/glpi.conf
 
 ```apache
 <VirtualHost *:80>
-    ServerName $HOSTS
-    ServerAlias $ADRESSE_IP
+    ServerName $HOST
+    ServerAlias $ADRESSE_IP_SERVEUR
     DocumentRoot /var/www/html
 
     Alias /glpi /var/www/html/glpi/public
@@ -294,12 +294,100 @@ rm /var/www/html/glpi/install/install.php
 
 ---
 
+## L. Configuration LDAP — Authentification Active Directory
+
+Intégration de GLPI avec le domaine `CreativeFusion-Studios.eu` pour centraliser l'authentification.
+
+### Prérequis
+
+- Serveur AD fonctionnel — `PAR-MERLIN-001`
+- Compte de service dédié dans l'AD avec droits de lecture sur l'annuaire
+- Connectivité réseau entre le serveur GLPI et le serveur AD sur le port 389 (LDAP) ou 636 (LDAPS)
+
+### Accès à la configuration
+
+```
+Configuration → Authentification → Répertoires LDAP → + Ajouter
+```
+
+### Paramètres de connexion
+
+| Champ | Valeur |
+|---|---|
+| Nom | `CreativeFusion-AD` |
+| Serveur par défaut | Oui |
+| Actif | Oui |
+| Serveur | `IP_SERVEUR_AD` ou `PAR-MERLIN-001.CreativeFusion-Studios.eu` |
+| Port | `389` |
+| Champ identifiant | `samaccountname` |
+| Champ de synchronisation | `objectGUID` |
+
+### Filtre de connexion Active Directory
+
+Filtre recommandé — retourne uniquement les utilisateurs actifs (exclut les comptes désactivés et les comptes machines) :
+
+```
+(&(objectClass=user)(objectCategory=person)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
+```
+
+### BaseDN
+
+```
+DC=CreativeFusion-Studios,DC=eu
+```
+
+> Attention — écrire sans espaces après les virgules. La casse est importante.
+
+### Compte de service
+
+```
+DN du compte  : CN=svc_glpi,OU=Compte_services,DC=CreativeFusion-Studios,DC=eu
+Mot de passe  : <mot de passe du compte de service>
+```
+
+### Préconfiguration Active Directory
+
+Cliquer sur le lien **Préconfiguration → Active Directory** pour charger automatiquement les valeurs par défaut adaptées à AD — cela pré-remplit les champs `objectClass`, `objectCategory` et `samaccountname`.
+
+![Configuration LDAP GLPI](./screenshots/10-glpi-ldap-config.png)
+
+### Test de connexion
+
+Après avoir sauvegardé, cliquer sur **Tester** pour vérifier la connexion au serveur AD.
+
+![Test connexion LDAP](./screenshots/11-glpi-ldap-test.png)
+
+### Synchronisation des utilisateurs
+
+```
+Configuration → Authentification → Répertoires LDAP → Importer des utilisateurs
+```
+
+Les utilisateurs AD peuvent ensuite se connecter à GLPI avec leurs identifiants de domaine.
+
+![Import utilisateurs AD](./screenshots/12-glpi-ldap-import.png)
+
+### Configuration LDAPS (optionnel — si certificat SSL)
+
+Pour sécuriser la connexion LDAP via TLS :
+
+| Champ | Valeur |
+|---|---|
+| Serveur | `ldaps://PAR-MERLIN-001.CreativeFusion-Studios.eu` |
+| Port | `636` |
+| Informations avancées → Utiliser TLS | Oui |
+
+---
+
 ## Sources
 
 - [Documentation GLPI Install](https://glpi-install.readthedocs.io/fr/latest/prerequisites.html)
 - [GitHub GLPI Project](https://github.com/glpi-project/glpi)
 
 ---
+
+> Testé sur Debian Trixie 13.x — PHP 8.4 — MariaDB  
+> Dernière mise à jour : avril 2026
 
 > Testé sur Debian Trixie 13.x — PHP 8.4 — MariaDB  
 > Dernière mise à jour : avril 2026
