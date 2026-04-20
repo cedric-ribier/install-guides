@@ -157,7 +157,7 @@ File system: NTFS
 ![Capture Partclone en cours](./screenshots/07-partclone-capture.png)
 
 
-# Capture issue d'une autre installation
+#  ! Capture issue d'une autre installation
 ---
 
 ## J. Déploiement sur une nouvelle machine
@@ -184,7 +184,7 @@ Booter la machine en PXE — le déploiement s'exécute automatiquement.
 
 ![Déploiement en cours](./screenshots/08-fog-deploy-task.png)
 
-# Capture issue d'une autre installation
+# ! Capture issue d'une autre installation
 ---
 
 ## K. Vérifications post-déploiement
